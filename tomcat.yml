@@ -1,5 +1,0 @@
-- hosts: all
-  become: true
-  tasks:
-    - name: cpy
-      shell: "cp /var/lib/jenkins/workspace/JAR_Project/target/java-tomcat-maven-example.war /opt/apache-tomcat-8.5.61/webapps"
