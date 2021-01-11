@@ -1,6 +1,6 @@
 - hosts: all
   become: true
-  remote_user: ubuntu
+  remote_user: root
   tasks:
     - name: stopTomcat
       shell: /opt/apache-tomcat-8.5.61/bin/catalina.sh stop
