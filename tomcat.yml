@@ -1,7 +1,14 @@
 - hosts: all
   become: true
   tasks:
-    - name: cpy
+    - name: stopTomcat
+      shell: /opt/apache-tomcat-8.5.61/bin/catalina.sh stop
+
+    - name: copy
       copy:
         src=/var/lib/jenkins/workspace/JAR_Project/target/java-tomcat-maven-example.war
         dest=/opt/apache-tomcat-8.5.61/webapps
+
+    - name: startTomcat
+      shell: nohup /opt/apache-tomcat-8.5.61/bin/catalina.sh start
+
